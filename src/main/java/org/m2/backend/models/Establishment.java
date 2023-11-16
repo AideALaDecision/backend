@@ -1,3 +1,5 @@
+package org.m2.backend.models;
+
 import java.util.ArrayList;
 import java.util.List;
 

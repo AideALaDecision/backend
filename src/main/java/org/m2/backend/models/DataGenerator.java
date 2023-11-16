@@ -1,3 +1,5 @@
+package org.m2.backend.models;
+
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
