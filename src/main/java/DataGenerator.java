@@ -74,14 +74,35 @@ public class DataGenerator {
         }
     }
 
-    // this method generate the perfect case, where there is no conflicts each student prefers an establishment that chose them
-//     void perfectCase(int n){
-//         // n the number of establishements/students
-//         List<Integer> rangeStudent = IntStream.rangeClosed(0, n-1)
-//                 .boxed().toList();
-//         List<Integer> rangeEstab = IntStream.rangeClosed(0, n-1)
-//                 .boxed().toList();
-//         System.out.println(rangeEstab);
-//         System.out.println(rangeStudent);
-//     }
+public void setPerfectCase() {
+
+        for (int i = 0; i < n; i++) {
+                Student student = students.get(i);
+                Establishment preferredEstab = establishments.get(i);
+                List<Integer> preferences = this.establishments.stream()
+                    .map(Establishment::getId)
+                    .collect(Collectors.toList());
+
+                preferences.remove(i);
+                Collections.shuffle(preferences);
+                preferences.add(0, preferredEstab.getId());
+
+                student.setPreferences(preferences);
+        }
+
+        for (int i = 0; i < n; i++) {
+                Establishment establishment = establishments.get(i);
+                Student preferredStudent = students.get(i);
+                List<Integer> preferences = this.students.stream()
+                    .map(Student::getId)
+                    .collect(Collectors.toList());
+                preferences.remove(i);
+                Collections.shuffle(preferences);
+                preferences.add(0, preferredStudent.getId());
+
+                establishment.setPreferences(preferences);
+        }
+
+
+}
 }

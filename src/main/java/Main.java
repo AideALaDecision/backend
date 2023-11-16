@@ -3,7 +3,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args){
         DataGenerator dg= new DataGenerator(5);
-        dg.setWorstCase();
+        dg.setPerfectCase();
         List<Student> st=dg.getStudents();
         List<Establishment> est=dg.getEstablishments();
 
