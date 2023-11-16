@@ -2,12 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
-    private static int count = -1;
+    private static int count = 0;
 
-
-
-    int id;
-    List<Integer> preferences = new ArrayList();
+    private int id;
+    List<Integer> preferences = new ArrayList<>();
 
     public Student() {
 
@@ -26,6 +24,12 @@ public class Student {
     }
 
     public void setPreferences(List<Integer> preferences) {
-        this.preferences = preferences;
+        this.preferences.clear();
+        this.preferences.addAll(preferences);
+    }
+
+    @Override
+    public String toString() {
+        return "id{"+ id +'}';
     }
 }
