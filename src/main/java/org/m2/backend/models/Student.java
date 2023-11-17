@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
-    private static int count = 0;
 
     private int id;
     List<Integer> preferences = new ArrayList<>();
 
-    public Student() {
-        setId(++count);
+    public Student(int id) {
+        this.id = id;
     }
 
     public int getId() {

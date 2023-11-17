@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Establishment {
-    private static int count = 0;
     int id;
     List<Integer> priorities = new ArrayList<>();
 
 
-    public Establishment() {
-        setId(count++);
+    public Establishment(int id) {
+        this.id = id;
     }
 
     public int getId() {

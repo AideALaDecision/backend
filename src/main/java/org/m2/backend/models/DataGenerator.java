@@ -29,8 +29,8 @@ public class DataGenerator {
         this.n=n;
 
         for (int i=0;i<n;i++){
-            this.students.add(new Student());
-            this.establishments.add(new Establishment());
+            this.students.add(new Student(i+1));
+            this.establishments.add(new Establishment(i+1));
         }
     }
 
