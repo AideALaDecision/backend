@@ -49,7 +49,7 @@ public class DataGenerator {
                     .map(Student::getId)
                     .collect(Collectors.toList());
             Collections.shuffle(preferences);
-            establishment.setPreferences(preferences);
+            establishment.setPriorities(preferences);
         }
     }
 
@@ -72,7 +72,7 @@ public class DataGenerator {
                 Collections.shuffle(preferences);
                 firstChoice=preferences.get(0);
             }
-            establishment.setPreferences(preferences);
+            establishment.setPriorities(preferences);
         }
     }
 
@@ -102,7 +102,7 @@ public void setPerfectCase() {
                 Collections.shuffle(preferences);
                 preferences.add(0, preferredStudent.getId());
 
-                establishment.setPreferences(preferences);
+                establishment.setPriorities(preferences);
         }
 
 

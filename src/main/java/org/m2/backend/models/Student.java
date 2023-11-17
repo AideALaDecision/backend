@@ -10,7 +10,6 @@ public class Student {
     List<Integer> preferences = new ArrayList<>();
 
     public Student() {
-
         setId(++count);
     }
 

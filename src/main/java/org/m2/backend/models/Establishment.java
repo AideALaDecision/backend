@@ -6,7 +6,7 @@ import java.util.List;
 public class Establishment {
     private static int count = 0;
     int id;
-    List<Integer> preferences = new ArrayList<>();
+    List<Integer> priorities = new ArrayList<>();
 
 
     public Establishment() {
@@ -21,15 +21,15 @@ public class Establishment {
         this.id = id;
     }
 
-    public List<Integer> getPreferences() {
-        return preferences;
+    public List<Integer> getPriorities() {
+        return priorities;
     }
 
 
-    public void setPreferences(List<Integer> preferences) {
+    public void setPriorities(List<Integer> preferences) {
 
-        this.preferences.clear();
-        this.preferences.addAll(preferences);
+        this.priorities.clear();
+        this.priorities.addAll(preferences);
     }
 
     @Override
