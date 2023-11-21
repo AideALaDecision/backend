@@ -76,7 +76,7 @@ public class DataGenerator {
         }
     }
 
-public void setPerfectCase() {
+    public void setPerfectCase() {
 
         for (int i = 0; i < n; i++) {
                 Student student = students.get(i);
@@ -107,4 +107,18 @@ public void setPerfectCase() {
 
 
 }
+
+    public void setExempleCase(){
+        this.students.get(0).setPreferences(Arrays.asList(2,1,3));
+        this.students.get(1).setPreferences(Arrays.asList(1,2,3));
+        this.students.get(2).setPreferences(Arrays.asList(1,2,3));
+
+        this.establishments.get(0).setPriorities(Arrays.asList(1,3,2));
+        this.establishments.get(1).setPriorities(Arrays.asList(2,1,3));
+        this.establishments.get(2).setPriorities(Arrays.asList(2,1,3));
+    }
+
+    public Establishment getEstablishmentById(int id){
+        return establishments.get(id-1);
+    }
 }

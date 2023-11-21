@@ -31,8 +31,9 @@ public class Establishment {
         this.priorities.addAll(preferences);
     }
 
+
     @Override
     public String toString() {
-        return "id{" + id +'}';
+        return "Etablissement{" + id +'}';
     }
 }

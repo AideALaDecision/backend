@@ -30,6 +30,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "id{"+ id +'}';
+        return "Etudiant{"+ id +'}';
     }
 }
