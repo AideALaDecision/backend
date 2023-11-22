@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class MainController {
 	DataGenerator dg;
+	GaleShapley gp;
 	
 	@GetMapping(path = "/preferences")
 	public DataGenerator preferences(@RequestParam int size, @RequestParam int caseID){ //caseID = -1 worst || 0 normal || 1 perfect
@@ -29,6 +30,13 @@ public class MainController {
 		}
         
 		return dg;
+	}
+	
+	@GetMapping(path = "/mariage")
+	public Map<Student, Establishment> findStableMatch(){
+		gp = new GaleShapley(gp);
+		
+		return gp.findStableMatch(dg.getStudents(),dg.getEstablishments());
 	}
 
 }
