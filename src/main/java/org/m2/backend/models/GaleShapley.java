@@ -12,7 +12,7 @@ public class GaleShapley {
         this.n=data.getStudents().size();
     }
 
-    public Map<Student, Establishment> findStableMatch(List<Student> students, List<Establishment> establishments) {
+    public List<Affectation> findStableMatch(List<Student> students, List<Establishment> establishments) {
         Map<Student, Establishment> matched = new HashMap<>();
         Queue<Student> freeStudents = new LinkedList<>(students);
         Map<Integer, List<Integer>> establishmentPreferences = new HashMap<>();
@@ -57,6 +57,14 @@ public class GaleShapley {
             }
         }
 
-        return matched;
+        List<Affectation> affectations = new ArrayList<>();
+        for (Map.Entry<Student, Establishment> entry : matched.entrySet()) {
+            Affectation affectation = new Affectation();
+            affectation.setIdEtudiant(entry.getKey().getId());
+            affectation.setIdEstablishment(entry.getValue().getId());
+            affectations.add(affectation);
+        }
+        
+        return affectations;
     }
 }
