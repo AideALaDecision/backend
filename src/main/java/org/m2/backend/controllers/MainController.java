@@ -1,7 +1,9 @@
 package org.m2.backend.controllers;
 
+import java.util.List;
 import java.util.Map;
 
+import org.m2.backend.models.Affectation;
 import org.m2.backend.models.DataGenerator;
 import org.m2.backend.models.Establishment;
 import org.m2.backend.models.GaleShapley;
@@ -37,7 +39,7 @@ public class MainController {
 	}
 	
 	@GetMapping(path = "/mariage")
-	public Map<Student, Establishment> findStableMatch(){
+	public List<Affectation> findStableMatch(){
 		gp = new GaleShapley(dg);
 		
 		return gp.findStableMatch(dg.getStudents(),dg.getEstablishments());
