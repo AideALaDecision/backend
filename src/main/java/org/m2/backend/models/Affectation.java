@@ -7,15 +7,24 @@ public class Affectation {
 	public Integer getIdEtudiant() {
 		return idEtudiant;
 	}
+
 	public void setIdEtudiant(Integer idEtudiant) {
 		this.idEtudiant = idEtudiant;
 	}
+
 	public Integer getIdEstablishment() {
 		return idEstablishment;
 	}
+
 	public void setIdEstablishment(Integer idEstablishment) {
 		this.idEstablishment = idEstablishment;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Affectation{" +
+				"Etudiant=" + idEtudiant +
+				", Etablissement=" + idEstablishment +
+				'}';
+	}
 }

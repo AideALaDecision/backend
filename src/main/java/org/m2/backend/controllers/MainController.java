@@ -3,11 +3,7 @@ package org.m2.backend.controllers;
 import java.util.List;
 import java.util.Map;
 
-import org.m2.backend.models.Affectation;
-import org.m2.backend.models.DataGenerator;
-import org.m2.backend.models.Establishment;
-import org.m2.backend.models.GaleShapley;
-import org.m2.backend.models.Student;
+import org.m2.backend.models.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainController {
 	DataGenerator dg;
 	GaleShapley gp;
+	List<Affectation> affectation;
 	
 	@GetMapping(path = "/preferences")
 	public DataGenerator preferences(@RequestParam int size, @RequestParam int caseID){ //caseID = -1 worst || 0 normal || 1 perfect
@@ -41,8 +38,17 @@ public class MainController {
 	@GetMapping(path = "/mariage")
 	public List<Affectation> findStableMatch(){
 		gp = new GaleShapley(dg);
-		
-		return gp.findStableMatch(dg.getStudents(),dg.getEstablishments());
+		affectation=gp.findStableMatch(dg.getStudents(),dg.getEstablishments());
+		return affectation;
 	}
 
+	@GetMapping(path = "/satisfaction")
+	public Satisfaction staisfaction(){
+		Satisfaction sat=new Satisfaction(affectation);
+		sat.satisfactionStudents(dg.getStudents());
+		sat.satisfactionEstablishments(dg.getEstablishments());
+		sat.satisfaction();
+		return sat;
+
+	}
 }
