@@ -54,25 +54,29 @@ public class DataGenerator {
     }
 
     public void setWorstCase(){
-        for (Student student : this.students) {
-            List<Integer> preferences = this.establishments.stream()
-                    .map(Establishment::getId)
-                    .collect(Collectors.toList());
-            Collections.shuffle(preferences);
-            student.setPreferences(preferences);
-        }
+        this.setPerfectCase();
+//        for (Student student : this.students) {
+//            List<Integer> preferences = this.establishments.stream()
+//                    .map(Establishment::getId)
+//                    .collect(Collectors.toList());
+//            Collections.shuffle(preferences);
+//            student.setPreferences(preferences);
+//        }
 
         for (Establishment establishment : this.establishments) {
-            List<Integer> preferences = this.students.stream()
-                    .map(Student::getId)
-                    .collect(Collectors.toList());
-            Collections.shuffle(preferences);
-            Integer firstChoice=preferences.get(0);
-            if(this.students.get(firstChoice-1).getId()==(establishment.getId())){
-                Collections.shuffle(preferences);
-                firstChoice=preferences.get(0);
-            }
-            establishment.setPriorities(preferences);
+            List<Integer> priorities=establishment.getPriorities();
+            Collections.reverse(priorities);
+            establishment.setPriorities(priorities);
+//            List<Integer> preferences = this.students.stream()
+//                    .map(Student::getId)
+//                    .collect(Collectors.toList());
+//            Collections.shuffle(preferences);
+//            Integer firstChoice=preferences.get(0);
+//            if(this.students.get(firstChoice-1).getId()==(establishment.getId())){
+//                Collections.shuffle(preferences);
+//                firstChoice=preferences.get(0);
+//            }
+//            establishment.setPriorities(preferences);
         }
     }
 
