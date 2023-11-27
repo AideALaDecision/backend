@@ -26,7 +26,6 @@ public class Establishment {
 
 
     public void setPriorities(List<Integer> preferences) {
-
         this.priorities.clear();
         this.priorities.addAll(preferences);
     }

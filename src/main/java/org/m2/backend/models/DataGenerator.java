@@ -65,8 +65,10 @@ public class DataGenerator {
 
         for (Establishment establishment : this.establishments) {
             List<Integer> priorities=establishment.getPriorities();
+//            System.out.println(priorities);
             Collections.reverse(priorities);
-            establishment.setPriorities(priorities);
+//            System.out.println(priorities);
+//            establishment.setPriorities(priorities);
 //            List<Integer> preferences = this.students.stream()
 //                    .map(Student::getId)
 //                    .collect(Collectors.toList());
