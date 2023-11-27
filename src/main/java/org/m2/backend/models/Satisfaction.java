@@ -5,9 +5,9 @@ import java.util.List;
 public class Satisfaction {
 
     private List<Affectation> affectationList;
-    private Double satisfactionStudents=0.0;
-    private Double satisfactionEst=0.0;
-    private Double satisfaction=0.0;
+    private Double satisfactionStudents=0.0; // Statisfaction des Etudiants
+    private Double satisfactionEst=0.0; // Statisfaction des Etablissments
+    private Double satisfaction=0.0; // Statisfaction general Etudiants et Etablissements
 
     public List<Affectation> getAffectationList() {
         return affectationList;
